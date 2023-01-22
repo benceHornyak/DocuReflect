@@ -1,0 +1,15 @@
+{
+  "name": "auto-doc-versioner",
+  "version": "1.0.0",
+  "description": "Welcome to the documentation of this function 👋 We strongly recommend keeping this file in sync with your function's logic to make sure anyone can easily understand your function in the future. If you don't need documentation, you can remove this file.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-appwrite": "^8.2.0"
+  }
+}

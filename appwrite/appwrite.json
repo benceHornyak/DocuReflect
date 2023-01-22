@@ -1,0 +1,102 @@
+{
+  "projectId": "63c032b0729acfbae23c",
+  "projectName": "DocuReflect",
+  "functions": [
+    {
+      "$id": "63c0361f9957a1f167af",
+      "name": "Auto Doc Versioner",
+      "runtime": "node-16.0",
+      "path": "functions/Auto Doc Versioner",
+      "entrypoint": "src/index.js",
+      "ignore": ["node_modules", ".npm"],
+      "execute": ["any"],
+      "events": [
+        "databases.63c6ed3496af20a6aa1c.collections.63c6edbae2bbf584ba7a.documents.*.update",
+        "databases.63c6ed3496af20a6aa1c.collections.63c6edbae2bbf584ba7a.documents.*.create"
+      ],
+      "schedule": "",
+      "timeout": 15
+    }
+  ],
+  "collections": [
+    {
+      "$id": "63c6edbae2bbf584ba7a",
+      "$createdAt": "2023-01-17T18:49:30.928+00:00",
+      "$updatedAt": "2023-01-17T18:49:30.928+00:00",
+      "$permissions": [],
+      "databaseId": "63c6ed3496af20a6aa1c",
+      "name": "docs",
+      "enabled": true,
+      "documentSecurity": false,
+      "attributes": [
+        {
+          "key": "text",
+          "type": "string",
+          "status": "available",
+          "required": false,
+          "array": false,
+          "size": 1073741824,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "key": "text",
+          "type": "fulltext",
+          "status": "available",
+          "attributes": ["text"],
+          "orders": ["ASC"]
+        }
+      ]
+    },
+    {
+      "$id": "63cb115ebbeda8293634",
+      "$createdAt": "2023-01-20T22:10:38.769+00:00",
+      "$updatedAt": "2023-01-20T22:10:38.769+00:00",
+      "$permissions": [],
+      "databaseId": "63c6ed3496af20a6aa1c",
+      "name": "docs-versions",
+      "enabled": true,
+      "documentSecurity": false,
+      "attributes": [
+        {
+          "key": "docId",
+          "type": "string",
+          "status": "available",
+          "required": true,
+          "array": false,
+          "size": 1073741824,
+          "default": null
+        },
+        {
+          "key": "text",
+          "type": "string",
+          "status": "available",
+          "required": true,
+          "array": false,
+          "size": 1073741824,
+          "default": null
+        },
+        {
+          "key": "version",
+          "type": "integer",
+          "status": "available",
+          "required": true,
+          "array": false,
+          "min": 1,
+          "max": 9223372036854775807,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "key": "docId",
+          "type": "key",
+          "status": "available",
+          "attributes": ["docId"],
+          "orders": ["ASC"]
+        }
+      ]
+    }
+  ]
+}
